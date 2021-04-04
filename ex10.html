@@ -6,5 +6,45 @@
   </head>
   <body>
     <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      var work = {
+        "front":"web",
+        "back":"server"
+      }
+      document.write("front : " + work.front+'<br>');
+      document.write("back : " + work.back+'<br>');
+
+      //add
+      work.design = "css";
+      document.write("design : " + work.design+'<br>');
+
+      //add with space
+      work["team manager"] ="note";
+      document.write("team manager : " + work["team manager"]+'<br>');
+    </script>
+
+    <h2>Iterate</h2>
+    <script>
+      //work 객체에 있는 key값들을 가져오는 반복문
+      for(var key in work){
+        document.write(key+'<br>');
+        document.write(work[key]+'<br>');
+        document.write(key + " : " + work[key] +'<br>');
+        document.write('<br>');
+      }
+    </script>
+
+    <h2>Property & Method</h2>
+    <script>
+      //var showAll = function(){}
+      //function showAll(){}
+      work.showAll = function(){
+        for(var key in this){
+          document.write(key + " : " + work[key] +'<br>');
+        }
+      }
+      work.showAll();
+    </script>
   </body>
 </html>
